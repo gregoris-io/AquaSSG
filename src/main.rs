@@ -1,29 +1,38 @@
 use std::env;
 use std::fs;
+use clap::Parser;
 
+mod cli;
 
+use cli::AquaSST;
 
 fn main() {
-    let args: Vec<String> = env::args().collect();
-    //dbg!(args);
 
+    let args = AquaSST::parse();
+
+    //let args: Vec<String> = env::args().collect();
+    
+    // #[derive(Parser)]
+    // struct Cli {
+    //     //Pattern to look for
+    //     pattern: String,
+    //     // Path of file to read
+    //     #[clap(parse(from_os_str))]
+    //     path: std::path::PathBuf,
+    // }
 
     //Saving argument values in variables
-    let query = &args[1];
-    let file_path = &args[2];
+    // let mut action_option = &args[1];
+    // let file_name = &args[2];
+    // let file_path = &args[3];
 
-    println!("Searching for {}", query);
-    println!("In file {}", file_path);
+    // println!("Processing {}", file_name);
+    // println!("Processing {}", file_path);
+    // //test contents
+    // println!("Vector contains: {:?}",args);
 
-    println!("Vector contains: {:?}",args);
+    //Write
 
 
 
-    // Options
-    let mut option = String::new();
-    match option{
-        "-v" | "--version"=>println!("version 0.0.1"),
-        "-h" | "--version"=>println!("Welcome to the Static Site Generator", ""),
-    }
-    println!("The option selected: {}",option);
 }
